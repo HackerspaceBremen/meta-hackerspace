@@ -40,6 +40,7 @@ cd ~/rpi
 cp meta-rpi/conf/local.conf.sample build/conf/local.conf
 cp meta-rpi/conf/bblayers.conf.sample build/conf/bblayers.conf
 
+# Diese Zeilen initialisieren den Workspace mit den neuen Einstellungen und baut direkt mit bitbake ein basis Image. Dann geht alles ab sofort schneller.
 cd ~
 source poky-rocko/oe-init-build-env ~/rpi/build
 bitbake console-image

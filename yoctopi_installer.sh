@@ -7,7 +7,7 @@
 
 #Abhängigkeiten
 sudo apt-get update
-sudo apt-get -y install build-essential git cmake autoconf zip chrpath diffstat gawk libncurses5-dev texinfo python2.7
+sudo apt-get -y install libx11-dev libxslt1-dev build-essential git cmake autoconf zip chrpath diffstat gawk libncurses5-dev texinfo python2.7
 
 #Python 2.7 als "Standard"
 sudo ln -sf /usr/bin/python2.7 /usr/bin/python

@@ -5,6 +5,10 @@ LICENSE = "MIT"
 IMAGE_FEATURES += "package-management splash"
 IMAGE_LINGUAS = "en-us"
 
+# Die Layer müssen (falls noch nicht vorhanden in bblayers hinzugefügt werden
+#    meta-webserver (unter poky-rocko/meta-openembedded wahrscheinlich bereits vorhanden)
+
+
 inherit image
 
 DEPENDS += "bcm2835-bootfiles"
@@ -17,19 +21,8 @@ CORE_OS = " \
     tzdata \
     e2fsprogs \
 "
-JAVA_SUPPORT = " \
-    openjre-8 \
-    cacao \
-    classpath \
-    classpath-common \
-    classpath-examples \
-    classpath-tools \
-    cacao \
-    strace binutils \
-    classpath \
-    classpath-common \
-    classpath-examples \
-    classpath-tools \
+NGINX = " \
+    nginx \
 "
 WIFI_SUPPORT = " \
     crda \
@@ -104,7 +97,7 @@ RPI_STUFF = " \
 "
 
 IMAGE_INSTALL += " \
-    ${JAVA_SUPPORT} \
+    ${NGINX} \
     ${CORE_OS} \
     ${DEV_SDK_INSTALL} \
     ${DEV_EXTRAS} \
@@ -131,5 +124,5 @@ ROOTFS_POSTPROCESS_COMMAND += " \
     disable_bootlogd ; \
  "
 
-export IMAGE_BASENAME = "openjre-8-image"
+export IMAGE_BASENAME = "nginx-image"
 
